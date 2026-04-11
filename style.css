@@ -1,0 +1,370 @@
+/* Mare Non Nostrum — site styles */
+
+:root {
+  --bg: #faf8f4;
+  --text: #2c2418;
+  --text-light: #6b5e4f;
+  --accent: #8b4513;
+  --accent-light: #c4956a;
+  --border: #d4c5b0;
+  --card-bg: #f5f0e8;
+  --spoiler-bg: #e8e0d4;
+  --link: #7a3b10;
+  --link-hover: #a0522d;
+  --max-width: 720px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { font-size: 18px; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Navigation ── */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 0.6rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+nav a:hover, nav a.active {
+  color: var(--accent);
+}
+
+/* ── Layout ── */
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.container.wide {
+  max-width: 880px;
+}
+
+/* ── Hero ── */
+
+.hero {
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+}
+
+.hero img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 8px 32px rgba(44, 36, 24, 0.25);
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.3rem;
+  color: var(--text);
+}
+
+.hero .subtitle {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.epigraph {
+  font-style: italic;
+  color: var(--text-light);
+  max-width: 480px;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ── Sections ── */
+
+section {
+  margin-bottom: 3rem;
+}
+
+section h2 {
+  font-size: 1.1rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+
+section p {
+  margin-bottom: 1rem;
+}
+
+/* ── Buy links ── */
+
+.buy-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.buy-links a, .buy-links span.coming-soon {
+  display: inline-block;
+  padding: 0.6rem 1.8rem;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.buy-links a:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.buy-links span.coming-soon {
+  border-color: var(--border);
+  color: var(--text-light);
+  cursor: default;
+}
+
+/* ── Idiom cards ── */
+
+.idiom-card {
+  background: var(--card-bg);
+  border-left: 3px solid var(--accent-light);
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.idiom-card h3 {
+  font-size: 1.05rem;
+  font-weight: normal;
+  font-style: italic;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.idiom-card .meaning {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+.idiom-card .usage {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin-bottom: 0.7rem;
+}
+
+.idiom-card .usage:last-of-type {
+  margin-bottom: 0;
+}
+
+.idiom-card .usage em {
+  font-style: normal;
+}
+
+
+/* ── Redacted text ── */
+
+.redacted {
+  filter: blur(4.5px);
+  -webkit-filter: blur(4.5px);
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+  opacity: 0.55;
+  display: inline;
+  transition: none;
+}
+
+/* ── See also links ── */
+
+.see-also {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 0.4rem;
+  font-style: italic;
+}
+
+/* ── Contact form ── */
+
+.contact-form {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-light);
+  margin-bottom: 0.3rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent-light);
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 0.6rem 2rem;
+  border: 1px solid var(--accent);
+  background: none;
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.contact-form button:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* ── Essay page ── */
+
+.essay-content {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.essay-content h1 {
+  font-size: 1.6rem;
+  font-weight: normal;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.essay-content h2 {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--text);
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.essay-content p {
+  margin-bottom: 1.2rem;
+}
+
+.essay-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+.essay-content blockquote {
+  border-left: 3px solid var(--accent-light);
+  padding-left: 1.2rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin: 1.2rem 0;
+}
+
+/* ── Placeholder ── */
+
+.placeholder {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* ── Footer ── */
+
+footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+}
+
+footer a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--accent);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 600px) {
+  html { font-size: 16px; }
+
+  nav {
+    gap: 1.2rem;
+    font-size: 0.78rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .hero { padding: 2rem 1rem 1.5rem; }
+  .hero img { max-width: 220px; }
+  .hero h1 { font-size: 1.6rem; }
+
+  .container { padding: 1.5rem 1rem; }
+
+  .buy-links { flex-direction: column; align-items: center; }
+}
