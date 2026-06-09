@@ -196,6 +196,113 @@ section p {
 }
 
 
+/* ── Idiom lexicon (accordion) ── */
+
+details.idiom {
+  background: var(--card-bg);
+  border-left: 3px solid var(--accent-light);
+  margin-bottom: 0.8rem;
+}
+
+details.idiom > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.9rem 2.6rem 0.9rem 1.5rem;
+  position: relative;
+}
+
+details.idiom > summary::-webkit-details-marker { display: none; }
+
+details.idiom > summary::after {
+  content: "+";
+  position: absolute;
+  right: 1.3rem;
+  top: 0.75rem;
+  color: var(--accent-light);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+details.idiom[open] > summary::after { content: "\2013"; }
+
+details.idiom > summary .idiom-name {
+  font-style: italic;
+  color: var(--accent);
+  font-size: 1.05rem;
+}
+
+details.idiom > summary .idiom-gloss {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.idiom-body {
+  padding: 0.2rem 1.5rem 1.2rem;
+}
+
+.idiom-body .meaning { font-size: 0.95rem; margin-bottom: 0.8rem; }
+
+.idiom-body .register {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text-light);
+  border-top: 1px solid var(--border);
+  padding-top: 0.7rem;
+  margin-bottom: 0.9rem;
+}
+
+.idiom-body .usage {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.idiom-body .usage em { font-style: normal; }
+
+.idiom-body .more {
+  margin-top: 0.8rem;
+  font-size: 0.78rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: var(--text-light);
+}
+
+/* the locked eight */
+.locked-intro {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin: 2.2rem 0 1rem;
+}
+
+.idiom.locked {
+  background: var(--card-bg);
+  border-left: 3px solid var(--border);
+  padding: 0.8rem 1.5rem;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.idiom.locked .idiom-name {
+  font-style: italic;
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+.idiom.locked::after {
+  content: "in the book";
+  margin-left: auto;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--accent-light);
+  white-space: nowrap;
+}
+
 /* ── Redacted text ── */
 
 .redacted {
