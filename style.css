@@ -16,7 +16,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { font-size: 18px; scroll-behavior: smooth; }
+html { font-size: 18px; scroll-behavior: smooth; scroll-padding-top: 4rem; }
 
 body {
   font-family: 'Georgia', 'Times New Roman', serif;
@@ -69,7 +69,7 @@ nav a:hover, nav a.active {
 
 .hero {
   text-align: center;
-  padding: 3rem 1.5rem 2rem;
+  padding: 3rem 1.5rem 0.75rem;
 }
 
 .hero img {
@@ -92,7 +92,21 @@ nav a:hover, nav a.active {
 .hero .subtitle {
   font-size: 0.95rem;
   color: var(--text-light);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero .subtitle a.attribution-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.hero .subtitle a.attribution-link:hover { color: var(--accent); }
+
+.hero .subtitle a.attribution-link sup {
+  color: var(--accent);
+  font-size: 0.7em;
+  margin-left: 0.1em;
 }
 
 .epigraph {
@@ -476,6 +490,132 @@ footer a:hover {
   color: var(--accent);
 }
 
+/* ── Amazon store picker ── */
+
+.stores {
+  max-width: 520px;
+  margin: -0.5rem auto 1.5rem;
+  text-align: center;
+}
+
+.stores > summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+.stores > summary::-webkit-details-marker { display: none; }
+.stores > summary:hover { color: var(--accent); }
+
+.store-grid { margin-top: 0.9rem; }
+
+.store-grid .store-label {
+  display: block;
+  margin: 0.7rem 0 0.3rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.store-grid a {
+  display: inline-block;
+  margin: 0.15rem 0.55rem;
+  font-size: 0.85rem;
+  color: var(--link);
+  text-decoration: none;
+}
+.store-grid a:hover { color: var(--accent); }
+
+/* ── Read page ── */
+
+.subnav {
+  position: sticky;
+  top: 2.6rem;
+  z-index: 90;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.subnav a { color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+.subnav a:hover, .subnav a.active { color: var(--accent); }
+
+.reading { font-size: 1.02rem; line-height: 1.8; }
+
+.reading .chapter { margin-bottom: 3.5rem; scroll-margin-top: 1.5rem; }
+
+.reading .chapter > h2 {
+  font-size: 1.3rem;
+  font-weight: normal;
+  font-style: italic;
+  color: var(--text);
+  border-bottom: none;
+  text-transform: none;
+  letter-spacing: normal;
+  margin-bottom: 1.5rem;
+}
+
+.reading p { margin-bottom: 1.1rem; text-align: justify; }
+
+.reading hr { border: none; text-align: center; margin: 2rem 0; }
+.reading hr::after {
+  content: "* * *";
+  color: var(--text-light);
+  letter-spacing: 0.6em;
+  font-size: 0.9rem;
+}
+
+.reading .later-voices {
+  border-left: 3px solid var(--accent-light);
+  background: var(--card-bg);
+  padding: 1rem 1.5rem 1.2rem;
+  margin: 2.2rem 0;
+  font-size: 0.95rem;
+}
+.reading .later-voices::before {
+  content: "Later voices";
+  display: block;
+  font-style: italic;
+  color: var(--accent);
+  font-size: 0.85rem;
+  margin-bottom: 0.6rem;
+}
+.reading .later-voices p { text-align: left; }
+.reading .later-voices blockquote {
+  border-left: none;
+  margin: 0.3rem 0 0.6rem 1.2rem;
+  color: var(--text-light);
+}
+
+.reading sup.fn a { text-decoration: none; color: var(--accent); font-size: 0.75em; }
+
+.reading .footnotes {
+  margin-top: 2.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+.reading .footnotes ol { margin: 0; padding-left: 1.4rem; }
+.reading .footnotes li { margin-bottom: 0.6rem; text-align: left; }
+.reading .fn-back { text-decoration: none; color: var(--accent); margin-left: 0.3rem; }
+
+.reading .continues {
+  font-style: italic;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: 2rem;
+}
+
 /* ── Responsive ── */
 
 @media (max-width: 600px) {
@@ -494,4 +634,7 @@ footer a:hover {
   .container { padding: 1.5rem 1rem; }
 
   .buy-links { flex-direction: column; align-items: center; }
+
+  .subnav { top: 2.3rem; gap: 1rem; font-size: 0.72rem; }
+  .reading { font-size: 1rem; }
 }
