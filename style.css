@@ -616,6 +616,62 @@ footer a:hover {
   margin-top: 2rem;
 }
 
+/* ── The World: story gate ── */
+
+.reveal-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.spoiler-note {
+  background: var(--spoiler-bg);
+  border: 1px solid var(--border);
+  max-width: 560px;
+  margin: 1.5rem auto 0;
+  padding: 1.8rem 2rem;
+  text-align: center;
+}
+
+.spoiler-note p { margin-bottom: 0.7rem; text-align: center; }
+.spoiler-note p:last-of-type { color: var(--text-light); font-size: 0.92rem; }
+
+.reveal-btn {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.6rem 1.8rem;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.reveal-btn:hover { background: var(--accent); color: var(--bg); }
+
+.reveal-toggle:focus-visible ~ .spoiler-note .reveal-btn {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.story-gated { display: none; }
+.reveal-toggle:checked ~ .story-gated { display: block; }
+.reveal-toggle:checked ~ .spoiler-note { display: none; }
+
+.reading .story-teaser {
+  font-style: italic;
+  color: var(--text-light);
+  text-align: center;
+  max-width: 580px;
+  margin: 0.5rem auto 2.8rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.reading .story-teaser em { font-style: normal; }
+
 /* ── Responsive ── */
 
 @media (max-width: 600px) {
