@@ -53,6 +53,8 @@ nav a:hover, nav a.active {
   color: var(--accent);
 }
 
+nav a.ext::after { content: " \2197"; opacity: 0.55; }
+
 /* ── Layout ── */
 
 .container {
