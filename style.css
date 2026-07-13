@@ -598,6 +598,18 @@ footer a:hover {
   color: var(--text-light);
 }
 
+.reading .orientation-note {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--text-light);
+  border-left: 3px solid var(--accent-light);
+  background: var(--card-bg);
+  padding: 0.6rem 1rem;
+  margin-bottom: 2.5rem;
+}
+.reading .orientation-note p { margin-bottom: 0; text-align: left; }
+.reading .orientation-note a { color: var(--link); }
+
 .reading sup.fn a { text-decoration: none; color: var(--accent); font-size: 0.75em; }
 
 .reading .footnotes {
