@@ -36,8 +36,9 @@ nav {
   border-bottom: 1px solid var(--border);
   padding: 0.6rem 1.5rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 0.5rem 2rem;
   font-size: 0.85rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -47,6 +48,7 @@ nav a {
   color: var(--text-light);
   text-decoration: none;
   transition: color 0.2s;
+  white-space: nowrap;
 }
 
 nav a:hover, nav a.active {
@@ -548,7 +550,7 @@ footer a:hover {
   text-transform: uppercase;
 }
 
-.subnav a { color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+.subnav a { color: var(--text-light); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
 .subnav a:hover, .subnav a.active { color: var(--accent); }
 
 .reading { font-size: 1.02rem; line-height: 1.8; }
@@ -731,6 +733,22 @@ footer a:hover {
     font-size: 0.78rem;
     padding: 0.5rem 1rem;
   }
+
+  /* Overflowing bars scroll sideways instead of clipping. flex-start +
+     auto margins on the ends centres the row when it fits; with center,
+     the overflowed left edge would be unreachable. */
+  nav, .subnav {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar, .subnav::-webkit-scrollbar { display: none; }
+  nav a, .subnav a { flex: 0 0 auto; }
+  nav a:first-child, .subnav a:first-child { margin-left: auto; }
+  nav a:last-child, .subnav a:last-child { margin-right: auto; }
 
   .hero { padding: 2rem 1rem 1.5rem; }
   .hero img { max-width: 220px; }
